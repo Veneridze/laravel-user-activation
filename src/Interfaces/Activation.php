@@ -1,4 +1,5 @@
 <?php
+namespace Veneridze\LaravelUserActivation\Interfaces;
 interface Activation {
     /**
      * Summary of isActivated
