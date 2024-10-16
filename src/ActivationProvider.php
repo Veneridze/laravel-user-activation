@@ -5,6 +5,8 @@ namespace Veneridze\LaravelUserActivation;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Veneridze\LaravelUserActivation\Console\Command\ActivateUser;
+use Veneridze\LaravelUserActivation\Console\Command\DeactivateUser;
 
 class ActivationProvider extends PackageServiceProvider
 {
@@ -14,8 +16,11 @@ class ActivationProvider extends PackageServiceProvider
             ->name('laravel-user-activation')
             ->hasConfigFile()
             ->hasMigrations()
-            ->hasRoutes()
-            ->hasConsoleCommands()
+            ->hasRoute('activation')
+            ->hasConsoleCommands([
+                ActivateUser::class,
+                DeactivateUser::class
+            ])
             ->publishesServiceProvider('ActivationProvider')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command
