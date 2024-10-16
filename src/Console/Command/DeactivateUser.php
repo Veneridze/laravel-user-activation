@@ -24,6 +24,7 @@ class DeactivateUser extends Command
      */
     public function handle(User $user): void
     {
+        $user = User::findOrFail($user);
         if($user->isActivated()) {
             $user->deactivate();
             $this->info("Учётная запись деактивирована");

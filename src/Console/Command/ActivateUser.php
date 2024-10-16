@@ -22,8 +22,9 @@ class ActivateUser extends Command
     /**
      * Execute the console command.
      */
-    public function handle(User $user): void
+    public function handle($user): void
     {
+        $user = User::findOrFail($user);
         if(!$user->isActivated()) {
             $user->activate();
             $this->info("Учётная запись активирована");
