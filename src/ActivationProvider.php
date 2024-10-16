@@ -11,7 +11,7 @@ class ActivationProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-model-types')
+            ->name('laravel-user-activation')
             ->hasConfigFile()
             ->hasMigrations()
             ->hasRoutes()
