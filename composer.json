@@ -1,7 +1,6 @@
 {
     "name": "veneridze/laravel-user-activation",
     "description": "Create welcome page to new users and send welcome notification",
-    "version": "1.0.1",
     "require": {
         "php": ">=8.2",
         "spatie/laravel-model-info": "^2.0",
