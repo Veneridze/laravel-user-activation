@@ -15,7 +15,7 @@ class ActivationProvider extends PackageServiceProvider
         $package
             ->name('laravel-user-activation')
             ->hasConfigFile()
-            ->hasMigrations()
+            //->hasMigration('add_user_activation_keys')
             ->hasRoute('activation')
             ->hasConsoleCommands([
                 ActivateUser::class,
